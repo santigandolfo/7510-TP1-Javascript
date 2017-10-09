@@ -7,8 +7,6 @@ var ParsedRuleGenerator = require('../src/ParsedRuleGenerator');
 
 describe("ParsedRuleGenerator", function () {
 
-    var interpreter = null;
-
     before(function () {
         // runs before all tests in this block
     });

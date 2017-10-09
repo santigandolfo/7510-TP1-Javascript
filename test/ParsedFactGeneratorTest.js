@@ -7,9 +7,6 @@ var ParsedFactGenerator = require('../src/ParsedFactGenerator');
 
 describe("ParsedFactGenerator", function () {
 
-
-    var interpreter = null;
-
     before(function () {
         // runs before all tests in this block
     });

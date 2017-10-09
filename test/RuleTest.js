@@ -9,8 +9,6 @@ var Rule = require('../src/Rule');
 
 describe("Rule", function () {
 
-    var interpreter = null;
-
     before(function () {
         // runs before all tests in this block
     });

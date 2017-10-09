@@ -7,8 +7,6 @@ var Query = require('../src/Query');
 
 describe("Query", function () {
 
-    var interpreter = null;
-
     before(function () {
         // runs before all tests in this block
     });
