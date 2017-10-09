@@ -87,7 +87,13 @@ describe("Interpreter", function () {
 
     });
 
+    describe('Invalid Query', function () {
 
+        it('hijo(pepe, juan) should be true', function () {
+            assert(interpreter.checkQuery('hijo(pepe, juan, )') === "Invalid Query");
+
+        });
+    });
 });
 
 
