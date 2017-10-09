@@ -3,6 +3,7 @@ var should = require('should');
 var assert = require('assert');
 
 var Interpreter = require('../src/interpreter');
+var InvalidQueryException = require('../src/InvalidQueryException');
 
 
 describe("Interpreter", function () {
@@ -89,9 +90,8 @@ describe("Interpreter", function () {
 
     describe('Invalid Query', function () {
 
-        it('hijo(pepe, juan) should be true', function () {
-            assert(interpreter.checkQuery('hijo(pepe, juan, )') === "Invalid Query");
-
+        it('hijo(pepe, juan) should throw an InvalidQueryException', function () {
+            expect( function(){ interpreter.checkQuery('hijo(pepe, juan, )'); } ).to.throw(InvalidQueryException());
         });
     });
 });

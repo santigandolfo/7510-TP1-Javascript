@@ -1,6 +1,7 @@
 var Query = require("./Query");
 var ParsedFactGenerator = require("./ParsedFactGenerator");
 var ParsedRuleGenerator = require("./ParsedRuleGenerator");
+var InvalidDatabaseException = require('../src/InvalidDatabaseException');
 
 var Database = function () {
 
@@ -13,7 +14,7 @@ var Database = function () {
         var parsedFactGenerator = new ParsedFactGenerator();
         var parsedRuleGenerator = new ParsedRuleGenerator();
         if (isInvalidDatabase(database)) {
-            return "Invalid Database";
+            throw new InvalidDatabaseException();
         }
         for (var i = 0; i < database.length; i++) {
             if (parsedFactGenerator.isFact(database[i])) {

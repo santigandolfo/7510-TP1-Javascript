@@ -4,6 +4,7 @@ var assert = require('assert');
 
 var Database = require('../src/Database');
 var Query = require('../src/Query');
+var InvalidDatabaseException = require('../src/InvalidDatabaseException');
 
 
 describe("Database", function () {
@@ -87,11 +88,11 @@ describe("Database", function () {
         });
 
         it('dbBadFact should return "Invalid Database"', function () {
-            assert(database.generateParsedDatabase(dbBadFact) === "Invalid Database");
+            expect( function(){ database.generateParsedDatabase(dbBadFact); } ).to.throw(InvalidDatabaseException());
         });
 
         it('dbBadRule should return "Invalid Database"', function () {
-            assert(database.generateParsedDatabase(dbBadRule) === "Invalid Database");
+            expect( function(){ database.generateParsedDatabase(dbBadRule); } ).to.throw(InvalidDatabaseException());
         });
     });
 

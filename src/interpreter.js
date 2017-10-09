@@ -1,5 +1,6 @@
 var Query = require("./Query");
 var Database = require("./Database");
+var InvalidQueryException = require('../src/InvalidQueryException');
 
 var Interpreter = function () {
 
@@ -14,7 +15,7 @@ var Interpreter = function () {
         console.log("Interpreter: checkQuery");
         var query = new Query(params + ".");
         if (query.isInvalidQuery()) {
-            return "Invalid Query";
+            throw new InvalidQueryException();
         }
         return this.parsedDatabase.queryElementsAreInDatabase(query);
     };
